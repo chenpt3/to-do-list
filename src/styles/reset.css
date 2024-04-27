@@ -1,0 +1,23 @@
+/* Resets */
+*, *::after, *::before {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  a, button {
+    text-decoration: none;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  
+  html {
+    font-size: 16px;
+    height: 100%;
+  }

@@ -1,0 +1,11 @@
+/* Global Styles */
+:root {
+    --header-bg-color: #1c7dde;
+    --logo-color: #000000;
+    --svg-color: invert(99%) sepia(1%) saturate(566%) hue-rotate(314deg) brightness(95%) contrast(79%);
+    --menu-bg-color: #ffffff;
+    --main-bg-color: #ffffff;
+    --text-color: #212529;
+    --button-color: #6c757d;
+    --hover-color: #f8f9fa;
+  }

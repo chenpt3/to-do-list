@@ -1,11 +1,11 @@
-/* Resets */
-*, *::after, *::before {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
+@import 'global.css';
+@import 'reset.css';
+@import 'layout.css';
+@import 'header-style.css';
+@import 'aside-style.css';
+@import 'footer-style.css';
+@import 'main-style.css';
+@import 'media-queries.css';
+@import 'fonts.css';
+@import 'mobile.css';
+@import 'animations.css';
