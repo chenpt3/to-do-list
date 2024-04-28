@@ -1,0 +1,117 @@
+/* Task List */
+.task-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+/* Task body */
+.task-body {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 30px;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    height: 100px;
+    overflow: scroll;
+}
+
+.task-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+    gap: 40px;
+}
+
+/* Task header */
+.task-header {
+    grid-row: 1;
+    width: 200px;
+    overflow: hidden;
+}
+
+/* Task title */
+.task-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Task description */
+.task-description {
+    font-size: 1.2rem;
+}
+
+/* Task stats */
+.task-stats {
+    grid-row: 2;
+    width: 200px;
+}
+
+/* Task stat */
+.task-stat {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+/* Task stats title */
+.task-stat-title {
+    font-weight: bold;
+}
+
+/* Task project */
+.task-project {
+    grid-row: 3;
+    width: 200px
+}
+
+/* Task actions */
+.task-actions {
+    grid-column: 2;
+    display: flex;
+    gap: 20px;
+}
+
+/* Task buttons */
+.task-buttons {
+    grid-column: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100px;
+}
+
+/* Edit task button */
+.edit-task-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.edit-task-button:hover {
+    background-color: #0056b3;
+}
+
+/* Complete task button */
+.complete-task-button {
+    background-color: #28A745;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.complete-task-button:hover {
+    background-color: #1e7e34;
+}

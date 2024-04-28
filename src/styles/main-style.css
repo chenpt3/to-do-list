@@ -1,3 +1,5 @@
+@import './screens-styles/welcome-style.css';
+
 main {
     display: flex;
     justify-content: center;
@@ -8,14 +10,13 @@ main {
 }
 
 .screen {
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-bg-color);
-    border-radius: 5px;
+    background-color: var(--menu-bg-color);
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 95%;
     width: 95%;
-    padding: 20px;
+    padding: 30px;
+    overflow-y: scroll;
 }
 
 .screen-hidden {

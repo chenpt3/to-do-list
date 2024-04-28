@@ -1,6 +1,4 @@
-import { TaskManager } from '../tasks-manager';
-import { initAllTasks } from './all-tasks';
-import { moonIcon, sunIcon, addProjectIcon, allTasksIcon, todayIcon, weekIcon, importantIcon, completedIcon, settingsIcon, helpIcon, menuIcon } from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/images.js';
+import { moonIcon, sunIcon, addProjectIcon, allTasksIcon, todayIcon, weekIcon, importantIcon, completedIcon, settingsIcon, helpIcon, menuIcon, logo } from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/images.js';
 class DOMElementCreator {
     constructor() {
         this.body = document.querySelector('body');
@@ -38,8 +36,6 @@ class DOMInitializer {
     };
 
     initializeDOM() {
-        this.TaskManager = new TaskManager();
-        this.TaskManager.populateTaskManager();
         this.addHeader();
         this.addMenu();
         this.addMain();
@@ -79,9 +75,9 @@ class DOMInitializer {
 
     addHeaderLogo(header) {
         const headerLogoContainer = this.domCreator.createElement('div', 'header-logo-container');
-        const headerLogoText = this.domCreator.createElement('p', 'header-logo-text');
-        this.domCreator.addText(headerLogoText, 'To-Do List');
-        this.domCreator.appendChild(headerLogoContainer, headerLogoText);
+        const headerLogo = this.domCreator.createElement('img', 'header-logo');
+        this.domCreator.addImage(headerLogo, logo);
+        this.domCreator.appendChild(headerLogoContainer, headerLogo);
         this.domCreator.appendChild(header, headerLogoContainer);
     };
 
@@ -214,174 +210,6 @@ class DOMInitializer {
     addScreen(main, screenName) {
         const screen = this.domCreator.createElement('div', `${screenName}-screen`, 'screen');
         this.domCreator.appendChild(main, screen);
-        this.generateScreenContent(screen);
-    };
-
-    generateScreenContent(screen) {
-        switch (screen.id) {
-            case 'welcome-screen':
-                this.addWelcomeScreenContent(screen);
-                break;
-            case 'settings-screen':
-                this.addSettingsScreenContent(screen);
-                break;
-            case 'help-screen':
-                this.addHelpScreenContent(screen);
-                break;
-            case 'allTasks-screen':
-                this.addAllTasksScreenContent(screen);
-                break;
-            case 'today-screen':
-                this.addTodayScreenContent(screen);
-                break;
-            case 'week-screen':
-                this.addWeekScreenContent(screen);
-                break;
-            case 'important-screen':
-                this.addImportantScreenContent(screen);
-                break;
-            case 'completed-screen':
-                this.addCompletedScreenContent(screen);
-                break;
-            case 'allProjects-screen':
-                this.addAllProjectsScreenContent(screen);
-                break;
-            case 'activeProject-screen':
-                this.addActiveProjectScreenContent(screen);
-                break;
-            case 'addProject-screen':
-                this.addAddProjectScreenContent(screen);
-                break;
-        };
-    };
-
-    // Welcome screen
-    addWelcomeScreenContent(screen) {
-        const welcomeHeading = this.domCreator.createElement('h1', 'welcome-heading');
-        this.domCreator.addText(welcomeHeading, "Welcome to Chen's To-Do List");
-        this.domCreator.appendChild(screen, welcomeHeading);
-
-        const welcomeText = this.domCreator.createElement('p', 'welcome-text');
-        this.domCreator.addText(welcomeText, "This is a simple to-do list application that allows you to keep track of your tasks and projects. You can add tasks, mark them as completed, and filter them by date, importance, and project. You can also add projects and assign tasks to them. Enjoy!");
-        this.domCreator.appendChild(screen, welcomeText);
-
-        const welcomeButton = this.domCreator.createElement('div', 'welcome-button');
-        this.domCreator.addText(welcomeButton, 'Get Started');
-        this.domCreator.appendChild(screen, welcomeButton);
-    };
-
-    // Settings screen
-    addSettingsScreenContent(screen) {
-        const settingsHeading = this.domCreator.createElement('h1', 'settings-heading');
-        this.domCreator.addText(settingsHeading, 'Settings');
-        this.domCreator.appendChild(screen, settingsHeading);
-
-        const settingsText = this.domCreator.createElement('p', 'settings-text');
-        this.domCreator.addText(settingsText, 'Change the settings of the application here.');
-        this.domCreator.appendChild(screen, settingsText);
-    };
-
-    // Help screen
-    addHelpScreenContent(screen) {
-        const helpHeading = this.domCreator.createElement('h1', 'help-heading');
-        this.domCreator.addText(helpHeading, 'Help');
-        this.domCreator.appendChild(screen, helpHeading);
-
-        const helpText = this.domCreator.createElement('p', 'help-text');
-        this.domCreator.addText(helpText, 'Get help with the application here.');
-        this.domCreator.appendChild(screen, helpText);
-    };
-
-    // All tasks screen
-    addAllTasksScreenContent(screen) {
-        const allTasksHeading = this.domCreator.createElement('h1', 'allTasks-heading');
-        this.domCreator.addText(allTasksHeading, 'All Tasks');
-        this.domCreator.appendChild(screen, allTasksHeading);
-
-        const allTasksText = this.domCreator.createElement('p', 'allTasks-text');
-        this.domCreator.addText(allTasksText, 'View all tasks here.');
-        this.domCreator.appendChild(screen, allTasksText);
-
-        const allTasks = this.domCreator.createElement('div', 'allTasks');
-        initAllTasks(allTasks, this.TaskManager);
-        this.domCreator.appendChild(screen, allTasks);
-    };
-
-    // Today screen
-    addTodayScreenContent(screen) {
-        const todayHeading = this.domCreator.createElement('h1', 'today-heading');
-        this.domCreator.addText(todayHeading, 'Today');
-        this.domCreator.appendChild(screen, todayHeading);
-
-        const todayText = this.domCreator.createElement('p', 'today-text');
-        this.domCreator.addText(todayText, 'View tasks due today here.');
-        this.domCreator.appendChild(screen, todayText);
-    };
-
-    // Week screen
-    addWeekScreenContent(screen) {
-        const weekHeading = this.domCreator.createElement('h1', 'week-heading');
-        this.domCreator.addText(weekHeading, 'Week');
-        this.domCreator.appendChild(screen, weekHeading);
-
-        const weekText = this.domCreator.createElement('p', 'week-text');
-        this.domCreator.addText(weekText, 'View tasks due this week here.');
-        this.domCreator.appendChild(screen, weekText);
-    };
-
-    // Important screen
-    addImportantScreenContent(screen) {
-        const importantHeading = this.domCreator.createElement('h1', 'important-heading');
-        this.domCreator.addText(importantHeading, 'Important');
-        this.domCreator.appendChild(screen, importantHeading);
-
-        const importantText = this.domCreator.createElement('p', 'important-text');
-        this.domCreator.addText(importantText, 'View important tasks here.');
-        this.domCreator.appendChild(screen, importantText);
-    };
-
-    // Completed screen
-    addCompletedScreenContent(screen) {
-        const completedHeading = this.domCreator.createElement('h1', 'completed-heading');
-        this.domCreator.addText(completedHeading, 'Completed');
-        this.domCreator.appendChild(screen, completedHeading);
-
-        const completedText = this.domCreator.createElement('p', 'completed-text');
-        this.domCreator.addText(completedText, 'View completed tasks here.');
-        this.domCreator.appendChild(screen, completedText);
-    };
-
-    // All projects screen
-    addAllProjectsScreenContent(screen) {
-        const allProjectsHeading = this.domCreator.createElement('h1', 'allProjects-heading');
-        this.domCreator.addText(allProjectsHeading, 'All Projects');
-        this.domCreator.appendChild(screen, allProjectsHeading);
-
-        const allProjectsText = this.domCreator.createElement('p', 'allProjects-text');
-        this.domCreator.addText(allProjectsText, 'View all projects here.');
-        this.domCreator.appendChild(screen, allProjectsText);
-    };
-
-    // Active project screen
-    addActiveProjectScreenContent(screen) {
-        const activeProjectHeading = this.domCreator.createElement('h1', 'activeProject-heading');
-        this.domCreator.addText(activeProjectHeading, 'Active Project');
-        this.domCreator.appendChild(screen, activeProjectHeading);
-
-        const activeProjectText = this.domCreator.createElement('p', 'activeProject-text');
-        this.domCreator.addText(activeProjectText, 'View the active project here.');
-        this.domCreator.appendChild(screen, activeProjectText);
-    };
-
-    // Add project screen
-    addAddProjectScreenContent(screen) {
-        const addProjectHeading = this.domCreator.createElement('h1', 'addProject-heading');
-        this.domCreator.addText(addProjectHeading, 'Add Project');
-        this.domCreator.appendChild(screen, addProjectHeading);
-
-        const addProjectText = this.domCreator.createElement('p', 'addProject-text');
-        this.domCreator.addText(addProjectText, 'Add a new project here.');
-        this.domCreator.appendChild(screen, addProjectText);
     };
 
     // Footer elements

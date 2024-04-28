@@ -1,4 +1,4 @@
 import './styles/style.css';
-import DOMControl from './scripts/dom/dom-action-init.js';
+import AdminControl from './scripts/admin-control';
 
-const dom = new DOMControl();
+const adminControl = new AdminControl();

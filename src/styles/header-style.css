@@ -7,13 +7,9 @@ header{
 }
 
 /* Header */
-#header-logo-container {
-    font-size: 2.4rem;
-    font-weight: 700;
-    white-space: nowrap;
-    color: var(--logo-color);
-    text-align: center;
-    letter-spacing: 1px;
+#header-logo {
+    width: 150px;
+    filter: var(--svg-color);
 }
 
 /* Header Buttons */

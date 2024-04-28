@@ -9,6 +9,7 @@ import completedIcon from '/Users/chenpetito/Documents/repos/to-do-list/src/asse
 import settingsIcon from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/settings.svg';
 import helpIcon from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/help.svg';
 import menuIcon from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/menu.svg';
+import logo from '/Users/chenpetito/Documents/repos/to-do-list/src/assets/images/logo.svg';
 
 export {
     moonIcon,
@@ -21,5 +22,6 @@ export {
     completedIcon,
     settingsIcon,
     helpIcon,
-    menuIcon
+    menuIcon,
+    logo
     };

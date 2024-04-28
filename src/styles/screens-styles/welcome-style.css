@@ -1,0 +1,31 @@
+.welcome-screen-container {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.welcome-screen-heading {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.welcome-screen-heading > h1 {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.welcome-screen-heading > h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.welcome-screen-text {
+    font-size: 1.5rem;
+    font-weight: 300;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    text-align: left;
+    padding: 0 20px;
+}

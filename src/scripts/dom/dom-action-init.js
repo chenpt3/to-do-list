@@ -1,11 +1,13 @@
 import DOMInitializer from './dom-init.js';
+import { ScreensManager } from './screens-manager.js';
 
 class DOMControl {
     constructor() {
         this.domInitializer = new DOMInitializer();
+        this.screensManager = new ScreensManager();
         this.determineTheme();
         this.determineOpenMenu();
-        this.determineScreen();
+        this.screensManager.determineScreen();
         this.eventListeners();
     };
 
@@ -53,7 +55,7 @@ class DOMControl {
             menu.classList.remove('menu-open');
             menuButtonsText.forEach(button => button.classList.add('hidden-menu-button-text'));
         };
-    }
+    };
 
     menuToggle() {
         const menu = document.querySelector('#container');
@@ -81,50 +83,28 @@ class DOMControl {
         moonButton.addEventListener('click', this.themeToggle);
 
         const logoButton = document.querySelector('#header-logo-container');
-        logoButton.addEventListener('click', () => this.screensToggle('welcome'));
+        logoButton.addEventListener('click', () => this.screensManager.screensToggle('welcome'));
 
         const infoButton = document.querySelector('#help-header-icon');
-        infoButton.addEventListener('click', () => this.screensToggle('help'));
+        infoButton.addEventListener('click', () => this.screensManager.screensToggle('help'));
 
         const settingsButton = document.querySelector('#settings-header-icon');
-        settingsButton.addEventListener('click', () => this.screensToggle('settings'));
+        settingsButton.addEventListener('click', () => this.screensManager.screensToggle('settings'));
 
         const allTasksButton = document.querySelector('#allTasks');
-        allTasksButton.addEventListener('click', () => this.screensToggle('allTasks'));
+        allTasksButton.addEventListener('click', () => this.screensManager.screensToggle('allTasks'));
 
         const todayButton = document.querySelector('#today');
-        todayButton.addEventListener('click', () => this.screensToggle('today'));
+        todayButton.addEventListener('click', () => this.screensManager.screensToggle('today'));
 
         const weekButton = document.querySelector('#week');
-        weekButton.addEventListener('click', () => this.screensToggle('week'));
+        weekButton.addEventListener('click', () => this.screensManager.screensToggle('week'));
 
         const importantButton = document.querySelector('#important');
-        importantButton.addEventListener('click', () => this.screensToggle('important'));
+        importantButton.addEventListener('click', () => this.screensManager.screensToggle('important'));
 
         const completedButton = document.querySelector('#completed');
-        completedButton.addEventListener('click', () => this.screensToggle('completed'));
-    };
-
-    determineScreen() {
-        const screens = document.querySelectorAll('.screen');
-        const screen = localStorage.getItem('screen');
-        if (screen) {
-            screens.forEach(screen => screen.classList.add('screen-hidden'));
-            const currentScreen = document.querySelector(`#${screen}-screen`);
-            currentScreen.classList.remove('screen-hidden');
-        } else {
-            screens.forEach(screen => screen.classList.add('screen-hidden'));
-            const currentScreen = document.querySelector('#welcome-screen');
-            currentScreen.classList.remove('screen-hidden');
-        };
-    };
-
-    screensToggle(screen) {
-        const screens = document.querySelectorAll('.screen');
-        screens.forEach(screen => screen.classList.add('screen-hidden'));
-        const currentScreen = document.querySelector(`#${screen}-screen`);
-        currentScreen.classList.remove('screen-hidden');
-        localStorage.setItem('screen', screen);
+        completedButton.addEventListener('click', () => this.screensManager.screensToggle('completed'));
     };
 };
 

@@ -1,4 +1,3 @@
-
 class Task {
     constructor(taskId, title, description, dueDate, priority, project, subtasks, notes, checklist, completed) {
         this.taskId = taskId;
@@ -11,8 +10,8 @@ class Task {
         this.notes = notes;
         this.checklist = checklist;
         this.completed = completed;
-    }
-}
+    };
+};
 
 class Subtask {
     constructor(subtaskId, title, notes, dueDate, completed) {
