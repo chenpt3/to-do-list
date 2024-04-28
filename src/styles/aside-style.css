@@ -1,3 +1,46 @@
-.button-image {
-    width: 40px;
+aside {
+    background-color: var(--menu-bg-color);
+    padding: 1rem 20px;
 }
+
+#menu-controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 10px 0;
+}
+
+#menu-buttons-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    width: 200px;
+}
+
+.menu-button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    height: 50px;
+    margin: 0.5rem 0;
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.menu-button-image {
+    width: 40px;
+    filter: var(--svg-color);
+}
+
+.hidden-menu-button-text {
+    display: none;
+}
+

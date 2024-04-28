@@ -1,4 +1,13 @@
-#header-logo {
+header{
+    background-color: var(--main-bg-color);
+    padding: 1rem 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Header */
+#header-logo-container {
     font-size: 2.4rem;
     font-weight: 700;
     white-space: nowrap;
@@ -7,7 +16,8 @@
     letter-spacing: 1px;
 }
 
-#header-buttons {
+/* Header Buttons */
+#header-buttons-container {
     display: flex;
     align-items: center;
     white-space: nowrap;
@@ -17,4 +27,12 @@
 .header-button {
     width: 40px;
     filter: var(--svg-color);
+}
+
+.hidden-theme-button {
+    display: none;
+}
+
+#menu-header-icon {
+    display: none;
 }

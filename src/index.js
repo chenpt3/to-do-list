@@ -1,4 +1,4 @@
 import './styles/style.css';
-import domControls from './scripts/dom/dom-init.js';
+import DOMControl from './scripts/dom/dom-action-init.js';
 
-const dom = new domControls();
+const dom = new DOMControl();
