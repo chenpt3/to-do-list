@@ -9,7 +9,6 @@ header{
 /* Header */
 #header-logo {
     width: 150px;
-    filter: var(--svg-color);
 }
 
 /* Header Buttons */
@@ -22,7 +21,6 @@ header{
 
 .header-button {
     width: 40px;
-    filter: var(--svg-color);
 }
 
 .hidden-theme-button {

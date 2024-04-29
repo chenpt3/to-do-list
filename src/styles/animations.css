@@ -1,0 +1,21 @@
+#menu-controls-button,
+.menu-button,
+#add-project-button,
+#menu-controls-profile,
+#header-logo,
+.header-button,
+.add-task-button-icon,
+.add-project-button-icon {
+    transition: filter 0.3s ease;
+}
+
+#menu-controls-button:hover,
+.menu-button:hover,
+#add-project-button:hover,
+#menu-controls-profile:hover,
+#header-logo:hover,
+.header-button:hover,
+.add-task-button-icon:hover,
+.add-project-button-icon:hover {
+    filter: var(--svg-hover-color);
+}

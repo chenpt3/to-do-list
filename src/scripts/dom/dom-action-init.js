@@ -98,7 +98,8 @@ class Events {
         for (let i = 0; i < openButtons.length; i++) {
             if (openButtons[i].length > 0) {
                 for (let j = 0; j < openButtons[i].length; j++) {
-                    openButtons[i][j].addEventListener('click', () => modalOpen(modalsList[i][j]));
+                    console.log(modalsList[i][j])
+                    openButtons[i][j].addEventListener('click', () => modalOpen(modalsList[i]));
                 };
             } else if (openButtons[i].length === undefined) {
                 openButtons[i].addEventListener('click', () => modalOpen(modalsList[i]));

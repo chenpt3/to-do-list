@@ -6,7 +6,6 @@ main {
     align-items: center;
     background-color: var(--secondary-bg-color);
     overflow: scroll;
-    padding: 15px;
 }
 
 .screen {
@@ -37,5 +36,4 @@ main {
 .screen-heading img {
     width: 50px;
     cursor: pointer;
-    filter: var(--svg-color);
 }

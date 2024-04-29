@@ -1,6 +1,7 @@
 import { TaskManager } from './tasks-manager.js';
 import DOMControl from './dom/dom-action-init.js';
 import { add, format, isWithinInterval } from 'date-fns';
+import { ModalsManager } from './modals-manager.js';
 
 /**
  * Populator class is responsible for managing tasks and projects, 
@@ -12,6 +13,7 @@ class Populator {
      * and populates the screens.
      */
     constructor() {
+        this.modalsManager = new ModalsManager();
         this.taskManager = new TaskManager();
         this.domControl = new DOMControl();
         this.populateScreens();

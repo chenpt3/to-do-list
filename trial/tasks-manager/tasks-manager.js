@@ -60,7 +60,7 @@ class Project {
     };
 };
 
-class TaskManager {
+class TasksManager {
     constructor() {
         this.tasks = [];
         this.subtasks = [];
@@ -298,4 +298,4 @@ class TaskManager {
     };
 };
 
-export { TaskManager };
+export { TasksManager };

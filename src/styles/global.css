@@ -18,19 +18,19 @@ body.dark-theme {
   --checklist-bg-color-hover: #1a1a1a;
   --description-bg-color: #2b2b2b;
   --description-bg-color-hover: #1a1a1a;
-  --secondary-bg-color: #2b2b2b;
+  --secondary-bg-color: #cecece;
   --text-color: #e0e0e0;
   --inverted-text-color: #1a1a1a;
   --menu-text-color: #e0e0e0;
   --faded-text-color: #b3b3b3;
-  --svg-color: invert(98%) sepia(54%) saturate(337%) hue-rotate(43deg) brightness(114%) contrast(92%);
-  --inverted-svg-color: invert(18%) sepia(3%) saturate(10%) hue-rotate(344deg) brightness(92%) contrast(91%);
-  --svg-hover-color: invert(87%) sepia(5%) saturate(4%) hue-rotate(349deg) brightness(94%) contrast(88%);
-  --accent-color: #ff6f00;
-  --accent-color-hover: #ff3d00;
-  --secondary-accent-color: #00e676;
-  --secondary-accent-color-hover: #00c853;
-  --menu-button-hover-bg-color: #1a2b6c;
+  --inverted-svg-color: invert(0%) sepia(1%) saturate(3%) hue-rotate(326deg) brightness(97%) contrast(104%);
+  --svg-color: invert(100%) sepia(37%) saturate(1%) hue-rotate(290deg) brightness(112%) contrast(101%);
+  --svg-hover-color: invert(42%) sepia(55%) saturate(620%) hue-rotate(54deg) brightness(105%) contrast(95%);
+  --accent-color: #6a9955;
+  --accent-color-hover: #577f44;
+  --secondary-accent-color: #9c64a6;
+  --secondary-accent-color-hover: #7e4f83;
+  --menu-button-hover-bg-color: #eaeaea;
   --header-button-hover-bg-color: #1a1a1a;
   --main-button-bg-color: #1a1a1a;
   --main-button-secondary-bg-color: #1a1a1a;
@@ -62,13 +62,13 @@ body {
   --inverted-text-color: #f5f5f5;
   --menu-text-color: #1a1a1a;
   --faded-text-color: #b3b3b3;
-  --svg-color: invert(18%) sepia(3%) saturate(10%) hue-rotate(344deg) brightness(92%) contrast(91%);
-  --inverted-svg-color: invert(98%) sepia(54%) saturate(337%) hue-rotate(43deg) brightness(114%) contrast(92%);
-  --svg-hover-color: invert(35%) sepia(3%) saturate(14%) hue-rotate(338deg) brightness(98%) contrast(87%);
-  --accent-color: #ff6f00;
-  --accent-color-hover: #ff3d00;
-  --secondary-accent-color: #00e676;
-  --secondary-accent-color-hover: #00c853;
+  --svg-color: invert(0%) sepia(1%) saturate(3%) hue-rotate(326deg) brightness(97%) contrast(104%);
+  --inverted-svg-color: invert(100%) sepia(37%) saturate(1%) hue-rotate(290deg) brightness(112%) contrast(101%);
+  --svg-hover-color: invert(42%) sepia(55%) saturate(620%) hue-rotate(54deg) brightness(105%) contrast(95%);
+  --accent-color: #6a9955;
+  --accent-color-hover: #577f44;
+  --secondary-accent-color: #9c64a6;
+  --secondary-accent-color-hover: #7e4f83;
   --menu-button-hover-bg-color: #e0e0e0;
   --header-button-hover-bg-color: #e0e0e0;
   --main-button-bg-color: #f5f5f5;
@@ -83,3 +83,6 @@ body {
   color: var(--text-color);
 }
 
+img {
+  filter: var(--svg-color);
+}

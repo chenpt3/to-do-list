@@ -1,5 +1,3 @@
-
-
 /* The menu itself, with a column layout and some padding */
 #menu {
     display: flex;
@@ -8,6 +6,7 @@
     gap: 40px;
     background-color: var(--menu-bg-color);
     overflow-y: scroll;
+    white-space: nowrap;
 }
 
 /* The container for the menu controls, with space between items */
@@ -32,7 +31,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 200px;
     gap: 5px;
 }
 
@@ -51,13 +49,11 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.25s ease 0s, color 0.25s ease 0s, filter 0.25s ease 0s;
 }
 
 /* The style for the image in each menu button */
 .menu-button-image {
     width: 40px;
-    filter: var(--svg-color);
     cursor: pointer;
 }
 
@@ -82,7 +78,6 @@
 #projects-container {
     display: flex;
     flex-direction: column;
-    width: 200px;
     gap: 10px;
     padding: 5px;
 }
@@ -97,5 +92,4 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.25s ease 0s, color 0.25s ease 0s, filter 0.25s ease 0s;
 }
