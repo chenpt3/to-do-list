@@ -10,7 +10,7 @@ main {
 }
 
 .screen {
-    background-color: var(--menu-bg-color);
+    background-color: var(--main-bg-color);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 95%;
@@ -21,4 +21,21 @@ main {
 
 .screen-hidden {
     display: none;
+}
+
+.screen-heading {
+    display: flex;
+    justify-content: space-between;
+}
+
+.screen-heading h1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.screen-heading img {
+    width: 50px;
+    cursor: pointer;
+    filter: var(--svg-color);
 }

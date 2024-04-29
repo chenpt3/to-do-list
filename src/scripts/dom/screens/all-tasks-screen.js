@@ -1,3 +1,4 @@
+import { addTaskIcon } from "../../../assets/images/images";
 class allTasksScreen {
     constructor() {
         this.renderScreenContent();
@@ -6,8 +7,9 @@ class allTasksScreen {
     getScreenContent() {
         const screenContent = `
         <div class='allTasks-screen-container'>
-            <div class='allTasks-screen-heading'>
+            <div class='allTasks-screen-heading screen-heading'>
                 <h1>All Tasks</h1>
+                <img src=${addTaskIcon} alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
             </div>
             <div class='allTasks-screen-text'>
                 <p>Here are all the tasks you have created, across all projects</p>
@@ -17,9 +19,10 @@ class allTasksScreen {
                 <div class='allTasks-screen-tasks-heading'>
                     <h2>Tasks</h2>
                 </div>
-                <div class='allTasks-screen-tasks-list'>
+                <div class='allTasks-screen-tasks-list tasks-list'>
                 </div>
             </div>
+        </div>
         `;
         return screenContent;
     };

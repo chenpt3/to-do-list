@@ -1,36 +1,85 @@
 /* Global Styles */
 body.dark-theme {
-  --main-bg-color: #1a1a1a;
-  --menu-bg-color: #333;
-  --secondary-bg-color: #404040;
-  --text-color: #f5f5f5;
-  --menu-text-color: #b8b8b8;
-  --faded-text-color: #999;
-  --logo-text-color: #f5f5f5;
-  --svg-color: invert(100%) sepia(95%) saturate(0%) hue-rotate(208deg) brightness(109%) contrast(92%);
-  --accent-color: #e57373;
-  --accent-color-hover: #ef5350;
+  --bg-color: #333;
+  --header-bg-color: #2b2b2b;
+  --menu-bg-color: #1a1a1a;
+  --main-bg-color: #2b2b2b;
+  --footer-bg-color: #2b2b2b;
+  --menu-projects-bg-color: #2b2b2b;
+  --modal-bg-color: #2b2b2b;
+  --modal-screen-bg-color: rgba(0, 0, 0, 0.7);
+  --task-bg-color: #2b2b2b;
+  --task-bg-color-hover: #1a1a1a;
+  --project-bg-color: #2b2b2b;
+  --project-bg-color-hover: #1a1a1a;
+  --note-bg-color: #2b2b2b;
+  --note-bg-color-hover: #1a1a1a;
+  --checklist-bg-color: #2b2b2b;
+  --checklist-bg-color-hover: #1a1a1a;
+  --description-bg-color: #2b2b2b;
+  --description-bg-color-hover: #1a1a1a;
+  --secondary-bg-color: #2b2b2b;
+  --text-color: #e0e0e0;
+  --inverted-text-color: #1a1a1a;
+  --menu-text-color: #e0e0e0;
+  --faded-text-color: #b3b3b3;
+  --svg-color: invert(98%) sepia(54%) saturate(337%) hue-rotate(43deg) brightness(114%) contrast(92%);
+  --inverted-svg-color: invert(18%) sepia(3%) saturate(10%) hue-rotate(344deg) brightness(92%) contrast(91%);
+  --svg-hover-color: invert(87%) sepia(5%) saturate(4%) hue-rotate(349deg) brightness(94%) contrast(88%);
+  --accent-color: #ff6f00;
+  --accent-color-hover: #ff3d00;
+  --secondary-accent-color: #00e676;
+  --secondary-accent-color-hover: #00c853;
+  --menu-button-hover-bg-color: #1a2b6c;
+  --header-button-hover-bg-color: #1a1a1a;
+  --main-button-bg-color: #1a1a1a;
+  --main-button-secondary-bg-color: #1a1a1a;
+  --main-button-hover-bg-color: #1a1a1a;
+  --main-button-secondary-hover-bg-color: #1a1a1a;
 }
 
 body {
+  --bg-color: #FAF9F6;
+  --header-bg-color: #f5f5f5;
+  --menu-bg-color: #f5f5f5;
   --main-bg-color: #f5f5f5;
-  --menu-bg-color: #fff;
-  --secondary-bg-color: #e0e0e0;
-  --text-color: #333;
-  --menu-text-color: #666;
-  --faded-text-color: #999;
-  --logo-text-color: #333;
-  --svg-color: invert(16%) sepia(25%) saturate(24%) hue-rotate(314deg) brightness(97%) contrast(90%);
-  --accent-color: #e57373;
-  --accent-color-hover: #ef5350;
+  --footer-bg-color: #f5f5f5;
+  --menu-projects-bg-color: #f5f5f5;
+  --modal-bg-color: #f5f5f5;
+  --modal-screen-bg-color: rgba(0, 0, 0, 0.7);
+  --task-bg-color: #f5f5f5;
+  --task-bg-color-hover: #e0e0e0;
+  --project-bg-color: #f5f5f5;
+  --project-bg-color-hover: #e0e0e0;
+  --note-bg-color: #f5f5f5;
+  --note-bg-color-hover: #e0e0e0;
+  --checklist-bg-color: #f5f5f5;
+  --checklist-bg-color-hover: #e0e0e0;
+  --description-bg-color: #f5f5f5;
+  --description-bg-color-hover: #e0e0e0;
+  --secondary-bg-color: #f5f5f5;
+  --text-color: #1a1a1a;
+  --inverted-text-color: #f5f5f5;
+  --menu-text-color: #1a1a1a;
+  --faded-text-color: #b3b3b3;
+  --svg-color: invert(18%) sepia(3%) saturate(10%) hue-rotate(344deg) brightness(92%) contrast(91%);
+  --inverted-svg-color: invert(98%) sepia(54%) saturate(337%) hue-rotate(43deg) brightness(114%) contrast(92%);
+  --svg-hover-color: invert(35%) sepia(3%) saturate(14%) hue-rotate(338deg) brightness(98%) contrast(87%);
+  --accent-color: #ff6f00;
+  --accent-color-hover: #ff3d00;
+  --secondary-accent-color: #00e676;
+  --secondary-accent-color-hover: #00c853;
+  --menu-button-hover-bg-color: #e0e0e0;
+  --header-button-hover-bg-color: #e0e0e0;
+  --main-button-bg-color: #f5f5f5;
 }
 
-  body {
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    line-height: 1.5;
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-  }
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
 

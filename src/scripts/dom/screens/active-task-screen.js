@@ -1,4 +1,4 @@
-class settingsScreen {
+class activeTaskScreen {
     constructor() {
         this.renderScreenContent();
     };
@@ -11,9 +11,9 @@ class settingsScreen {
     };
 
     renderScreenContent() {
-        const screen = document.querySelector('#settings-screen');
+        const screen = document.querySelector('#activeTask-screen ');
         screen.innerHTML = this.getScreenContent();
     };
 };
 
-export { settingsScreen };
+export { activeTaskScreen };

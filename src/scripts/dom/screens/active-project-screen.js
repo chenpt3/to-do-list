@@ -11,7 +11,7 @@ class activeProjectScreen {
     };
 
     renderScreenContent() {
-        const screen = document.querySelector('#activeProject-screen');
+        const screen = document.querySelector('#activeProject-screen ');
         screen.innerHTML = this.getScreenContent();
     };
 };

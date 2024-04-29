@@ -1,3 +1,4 @@
+import { addProjectIcon } from "../../../assets/images/images.js";
 class allProjectsScreen {
     constructor() {
         this.renderScreenContent();
@@ -5,7 +6,22 @@ class allProjectsScreen {
 
     getScreenContent() {
         const screenContent = `
-        <h1>Welcome to the game!</h1>
+        <div class='allProject-screen-container'>
+            <div class='allProject-screen-heading screen-heading'>
+                <h1>All Projects</h1>
+                <img src=${addProjectIcon} alt='Add Project' id='add-project-button-icon' class='add-project-button-icon'>
+            </div>
+            <div class='allProject-screen-text'>
+                <p>Here are all the projects you have created</p>
+            </div>
+            <div class='allProject-screen-tasks'>
+                <div class='allProject-screen-tasks-heading'>
+                    <h2>Projects</h2>
+                </div>
+                <div class='projects-screen-projects-list screen-projects-list'>
+                </div>
+            </div>
+        </div>
         `;
         return screenContent;
     };

@@ -1,53 +1,67 @@
 /* Task List */
-.task-list {
+.task-list, .screen-projects-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
+    white-space: nowrap;
 }
+
 /* Task body */
-.task-body {
+.task-body, .project-body {
     display: grid;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 30px;
-    background-color: var(--main-bg-color);
+    grid-template-columns: 20% 30% 1fr 10%;
+    gap: 10px;
+    background-color: var(--task-bg-color);
     border-radius: 10px;
     height: 100px;
     overflow: scroll;
-}
-
-.task-group {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    white-space: nowrap;
-    gap: 40px;
+    padding: 0 20px;
+    min-width: 1000px;
 }
 
 /* Task header */
 .task-header {
-    grid-row: 1;
-    width: 200px;
-    overflow: hidden;
+    grid-column: 1;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    height: 90px;
 }
 
-/* Task title */
-.task-title {
-    font-size: 1.4rem;
-    font-weight: bold;
+.task-header h3 {
+    font-size: 2.4rem;
 }
 
-/* Task description */
-.task-description {
-    font-size: 1.2rem;
+.task-header p {
+    font-size: 0.8rem;
 }
 
 /* Task stats */
 .task-stats {
-    grid-row: 2;
-    width: 200px;
+    grid-column: 2;
+    display: grid;
+    grid-template-areas: 'project priority' 'description description' 'description description' 'description description';
+    height: 90px;
+}
+
+/* Task actions */
+.task-actions {
+    grid-column: 3;
+    height: 90px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* Task buttons */
+.task-buttons {
+    grid-column: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    height: 90px;
 }
 
 /* Task stat */
@@ -56,34 +70,19 @@
     flex-direction: row;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem;
+}
+
+.description-stat {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    justify-self: start;
 }
 
 /* Task stats title */
 .task-stat-title {
     font-weight: bold;
-}
-
-/* Task project */
-.task-project {
-    grid-row: 3;
-    width: 200px
-}
-
-/* Task actions */
-.task-actions {
-    grid-column: 2;
-    display: flex;
-    gap: 20px;
-}
-
-/* Task buttons */
-.task-buttons {
-    grid-column: 3;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100px;
 }
 
 /* Edit task button */

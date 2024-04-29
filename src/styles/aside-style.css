@@ -1,47 +1,101 @@
-aside {
+
+
+/* The menu itself, with a column layout and some padding */
+#menu {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 10px 10px 20px;
+    gap: 40px;
     background-color: var(--menu-bg-color);
-    padding: 1rem 20px;
     overflow-y: scroll;
 }
 
+/* The container for the menu controls, with space between items */
 #menu-controls-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
-    padding: 10px 0;
+    height: 50px;
 }
 
+/* The profile section of the menu controls, with a column layout */
+#menu-controls-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* The container for the menu buttons, with a column layout and centered items */
 #menu-buttons-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
     width: 200px;
+    gap: 5px;
 }
 
+/* The style for each menu button, with a hover effect */
 .menu-button {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
+    padding-left: 5px;
+    margin-left: -10px;
+    letter-spacing: 1px;
     width: 100%;
     height: 50px;
-    margin: 0.5rem 0;
-    color: var(--text-color);
+    color: var(--menu-text-color);
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s, filter 0.25s ease 0s;
 }
 
+/* The style for the image in each menu button */
 .menu-button-image {
     width: 40px;
     filter: var(--svg-color);
+    cursor: pointer;
 }
 
+/* The style for the icon in the add project button */
+#add-project-button-icon {
+    width: 30px;
+}
+
+/* The style for the projects list */
+#projects-list {
+    font-size: 0.9rem;
+    background-color: var(--menu-projects-bg-color);
+    border-radius: 10px;
+}
+
+/* The style for the hidden menu button text */
 .hidden-menu-button-text {
-    display: none;
+    display: none !important;
 }
 
+/* The container for the projects, with a column layout and some padding */
+#projects-container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 10px;
+    padding: 5px;
+}
+
+/* The style for the add project button, with a hover effect */
+#add-project-button {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+    color: var(--menu-text-color);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.25s ease 0s, color 0.25s ease 0s, filter 0.25s ease 0s;
+}
