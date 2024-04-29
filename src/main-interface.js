@@ -1,4 +1,4 @@
-import StyleManager from "./style-manager/style-manager.css";
+import "./styles-manager/styles-manager.css";
 
 import DomManager from "./dom-manager/dom-manager.js";
 import TasksManager from "./tasks-manager/tasks-manager.js";
@@ -10,7 +10,7 @@ import EventsManager from "./events-manager/events-manager.js";
 
 class MainInterface {
     constructor() {
-        this.dom = new DomManager();
+        this``.dom = new DomManager();
         this.TasksManager = new TasksManager();
         this.assets = new AssetsManager();
         this.screens = new ScreensManager();
