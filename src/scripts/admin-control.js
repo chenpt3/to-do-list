@@ -40,40 +40,94 @@ class Populator {
      * @param {string} screenName - The name of the screen where the task will be added.
      */
     addTaskToScreen(task, screenName) {
+        const subtasks = this.taskManager.subtasks;
+        const notes = this.taskManager.notes;
+        const checklist = this.taskManager.checklistItems;
         const screen = document.querySelector(`#${screenName}-screen`);
         const taskElement = document.createElement('div');
         taskElement.innerHTML = `
             <div class='task-header'>
-                <h3>${task.title}</h3>
-                <p>Due Date: ${format(task.dueDate, 'dd-MM-yyyy')}</p>
+                <div class='task-title'>
+                    <h3>${task.title}</h3>
+                </div>
+                <div class='task-description'>
+                    <p>${task.description}</p>
+                </div>
+                <div class='task-status'>
+                    <p>Status: ${task.status}</p>
+                </div>
+                <div class='task-priority'>
+                    <p>Priority: ${task.priority}</p>
+                </div>
+                <div class='task-due-in'>
+                    <p>Due in: ${task.dueIn > 0 ? `${task.dueIn} days` : task.dueIn === 0 ? 'Today' : `Overdue by ${Math.abs(task.dueIn)} days`}</p>
+                </div>
+                <div class='task-due-date'>
+                    <p>Due Date: ${
+                        task.dueDate.getDate() < 10 ? `0${task.dueDate.getDate()}` : task.dueDate.getDate()}/${
+                        task.dueDate.getMonth() < 9 ? `0${task.dueDate.getMonth() + 1}` : task.dueDate.getMonth() + 1}/${
+                        task.dueDate.getFullYear()
+                    }</p>
+                </div<
             </div>
-            <div class='task-stats'>
-                <div class='task-stat project-stat'>
-                    <p class='task-stat-title'>Project:</p>
-                    <p class='task-stat'>${task.project}</p>
+            <div class='task-body hidden'>
+                <div class='task-id'>
+                    <p>ID: ${task.taskId}</p>
                 </div>
-                <div class='task-stat priority-stat'>
-                    <p class='task-stat-title'>Priority:</p>
-                    <p class='task-stat'>${task.priority}</p>
+                <div class='task-project'>
+                    <p>Project: <span>${task.project}<span></p>
                 </div>
-                <div class='task-stat description-stat'>
-                    <p class='task-stat-title'>Description:</p>
-                    <p class'task-stat>${task.description}</p>
+                <div class='task-assign-to-project'>
+                    <button>Assign to Project</button>
                 </div>
-            </div>
-            <div class='task-actions'>
-                <div class='task-action subtasks-stat'>
-                    <p class='task-stat-title'>Subtasks:</p>
-                    <p class='task-stat'>${task.subtasks}</p>
+                <div class='task-change-project hidden'>
+                    <button>Change Project</button>
                 </div>
-                <div class='task-action notes-stat'>
-                    <p class='task-stat-title'>Notes:</p>
-                    <p class='task-stat'>${task.notes}</p>
+                <div class='task-subtasks'>
+                    <ul> Subtasks:
+                        ${subtasks.map(subtask => {
+                            if (subtask.owner === task.title) {
+                                return `<li>${subtask.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
                 </div>
-            </div>
-            <div class='task-buttons'>
-                <button class='edit-task-button'>Edit</button>
-                <button class='complete-task-button'>Complete</button>
+                <div class='task-add-subtask-button'>
+                    <button>Add Subtask</button>
+                </div>
+                <div class='task-notes'>
+                    <ul> Notes:
+                        ${notes.map(note => {
+                            if (note.owner === task.title) {
+                                return `<li>${note.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
+                </div>
+                <div class='task-add-note-button'>
+                    <button>Add Note</button>
+                </div>
+                <div class='task-checklist'>
+                    <ul> Checklist:
+                        ${checklist.map(item => {
+                            if (item.owner === task.title) {
+                                return `<li>${item.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
+                </div>
+                <div class='task-add-checklist-item-button'>
+                    <button>Add Checklist Item</button>
+                </div>
+                <div class='task-edit-button'>
+                    <button>Edit</button>
+                </div>
+                <div class='task-complete-button'>
+                    <button>Complete</button>
+                </div>
+                <div class='task-reopen-button hidden'>
+                    <button>Reopen</button>
+                </div>
             </div>
         `;
         taskElement.classList.add(`task-body`);
@@ -213,7 +267,7 @@ class Populator {
             this.addTaskToScreen(task, 'completed');
         });
     };
-
+    
     /**
      * populateAllProjectsScreen method populates the allProjects screen with open projects.
      */
@@ -223,33 +277,76 @@ class Populator {
         openProjects.forEach(project => {
             const projectElement = document.createElement('div');
             projectElement.innerHTML = `
-            <div class='task-header'>
-                <h3>${project.title}</h3>
-                <p>Due Date: ${format(project.dueDate, 'dd-MM-yyyy')}</p>
+            <div class='project-header'>
+                <div class='project-title'>
+                    <h3>${project.title}</h3>
+                </div>
+                <div class='project-description'>
+                    <p>${project.description}</p>
+                </div>
+                <div class='project-status'>
+                    <p>Status: ${project.status}</p>
+                </div>
+                <div class='project-priority'>
+                    <p>Priority: ${project.priority}</p>
+                </div>
+                <div class='project-due-in'>
+                    <p>Due in: ${project.dueIn > 0 ? `${project.dueIn} days` : project.dueIn === 0 ? 'Today' : `Overdue by ${Math.abs(project.dueIn)} days`}</p>
+                </div>
+                <div class='project-due-date'>
+                    <p>Due Date: ${
+                        project.dueDate.getDate() < 10 ? `0${project.dueDate.getDate()}` : project.dueDate.getDate()}/${
+                        project.dueDate.getMonth() < 9 ? `0${project.dueDate.getMonth() + 1}` : project.dueDate.getMonth() + 1}/${
+                        project.dueDate.getFullYear()
+                    }</p>
+                </div<
             </div>
-            <div class='task-stats'>
-                <div class='task-stat priority-stat'>
-                    <p class='task-stat-title'>Priority:</p>
-                    <p class='task-stat'>${project.priority}</p>
+            <div class='project-body'>
+                <div class='project-id'>
+                    <p>ID: ${project.projectId}</p>
                 </div>
-                <div class='task-stat description-stat'>
-                    <p class='task-stat-title'>Description:</p>
-                    <p class'task-stat>${project.description}</p>
+                <div class='project-tasks'>
+                    <ul> Tasks:
+                        ${this.taskManager.tasks.map(task => {
+                            if (task.project === project.title) {
+                                return `<li>${task.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
                 </div>
-            </div>
-            <div class='task-actions'>
-                <div class='task-action subtasks-stat'>
-                    <p class='task-stat-title'>Subtasks:</p>
-                    <p class='task-stat'>${project.subtasks}</p>
+                <div class='project-add-task-button'>
+                    <button>Add Task</button>
                 </div>
-                <div class='task-action notes-stat'>
-                    <p class='task-stat-title'>Notes:</p>
-                    <p class='task-stat'>${project.notes}</p>
+                <div class='project-notes'>
+                    <ul> Notes:
+                        ${this.taskManager.notes.map(note => {
+                            if (note.owner === project.title) {
+                                return `<li>${note.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
                 </div>
-            </div>
-            <div class='task-buttons'>
-                <button class='edit-project-button'>Edit</button>
-                <button class='complete-project-button'>Complete</button>
+                <div class='project-add-note-button'>
+                    <button>Add Note</button>
+                </div>
+                <div class='project-checklist'>
+                    <ul> Checklist:
+                        ${this.taskManager.checklistItems.map(item => {
+                            if (item.owner === project.title) {
+                                return `<li>${item.title}</li>`;
+                            };
+                        }).join('')}
+                    </ul>
+                </div>
+                <div class='project-edit-button'>
+                    <button>Edit</button>
+                </div>
+                <div class='project-complete-button'>
+                    <button>Complete</button>
+                </div>
+                <div class='project-reopen-button hidden'>
+                    <button>Reopen</button>
+                </div>
             </div>
             `;
             projectElement.classList.add('project-body');

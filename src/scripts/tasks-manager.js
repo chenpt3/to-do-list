@@ -1,7 +1,7 @@
 import { format } from "date-fns";
 
 class Task {
-    constructor(taskId, title, description, dueDate, priority, project, subtasks, notes, checklist, completed, status) {
+    constructor(taskId, title = `Task #${taskId}`, description = "", dueDate = undefined, priority = "Normal", project = undefined, subtasks = undefined, notes = undefined, checklist = undefined, completed = false, status = "Active") {
         this.taskId = taskId;
         this.title = title;
         this.description = description;
@@ -13,7 +13,21 @@ class Task {
         this.checklist = checklist;
         this.completed = completed;
         this.status = status;
+        this.dueIn = this.calculateDueIn();
     };
+
+    calculateDueIn() {
+        if (this.dueDate) {
+            const today = new Date();
+            const dueDate = this.dueDate;
+            const differenceInTime = dueDate.getTime() - today.getTime();
+            const differenceInDays = differenceInTime / (1000 * 3600 * 24);          
+            return Math.round(differenceInDays);
+        } else {
+            return undefined;
+        };
+    };
+
 
 };
 
@@ -47,16 +61,30 @@ class ChecklistItem {
 };
 
 class Project {
-    constructor(projectId, title, tasks, description, dueDate, priority, notes, checklist, completed) {
+    constructor(projectId, title = `Project #${projectId}`, tasks = undefined, description = "", dueDate = undefined, priority = "Normal", notes = undefined, checklist = undefined, completed = false, status = "Active") {
         this.projectId = projectId;
         this.title = title;
         this.tasks = tasks;
         this.description = description;
-        this.dueDate = dueDate;
+        this.dueDate = new Date(dueDate);
         this.priority = priority;
         this.notes = notes;
         this.checklist = checklist;
         this.completed = completed;
+        this.status = status;
+        this.dueIn = this.calculateDueIn();
+    };
+
+    calculateDueIn() {
+        if (this.dueDate) {
+            const today = new Date();
+            const dueDate = this.dueDate;
+            const differenceInTime = dueDate.getTime() - today.getTime();
+            const differenceInDays = differenceInTime / (1000 * 3600 * 24);
+            return Math.round(differenceInDays);
+        } else {
+            return undefined;
+        };
     };
 };
 
@@ -276,9 +304,9 @@ class TaskManager {
     };
 
     populateTaskManagerTemporarilyForTesting() {
-        this.addTask(1, "Task 1", "Description 1", format(new Date(), "yyyy-MM-dd"), "High", "Project 1", [], [], [], false);
-        this.addTask(2, "Task 2", "Description 2", format(new Date(), "yyyy-MM-dd"), "Medium", "Project 2", [], [], [], false);
-        this.addTask(3, "Task 3", "Description 3", format(new Date(), "yyyy-MM-dd"), "Low", "Project 3", [], [], [], false);
+        this.addTask(1, "Task 1", "Description 1", new Date("2024-05-01"), "High", "Project 1", [], [], [], false);
+        this.addTask(2, "Task 2", "Description 2", new Date("2024-05-05"), "Medium", "Project 2", [], [], [], false);
+        this.addTask(3, "Task 3", "Description 3", new Date("2024-05-15"), "Low", "Project 3", [], [], [], false);
 
         this.addSubtask(1, "Subtask 1", "Notes 1", format(new Date(), "yyyy-MM-dd"), false, "Task 1");
         this.addSubtask(2, "Subtask 2", "Notes 2", format(new Date(), "yyyy-MM-dd"), false, "Task 2");
@@ -295,6 +323,14 @@ class TaskManager {
         this.addProject(1, "Project 1", [], "Description 1", format(new Date(), "yyyy-MM-dd"), "High", [], [], false);
         this.addProject(2, "Project 2", [], "Description 2", format(new Date(), "yyyy-MM-dd"), "Medium", [], [], false);
         this.addProject(3, "Project 3", [], "Description 3", format(new Date(), "yyyy-MM-dd"), "Low", [], [], false);
+
+        this.addChecklistItem(4, "Checklist Item 4", false, "Project 1");
+        this.addChecklistItem(5, "Checklist Item 5", false, "Project 2");
+        this.addChecklistItem(6, "Checklist Item 6", false, "Project 3");
+
+        this.addNote(4, "Note 4", "Content 4", "Project 1");
+        this.addNote(5, "Note 5", "Content 5", "Project 2");
+        this.addNote(6, "Note 6", "Content 6", "Project 3");
     };
 };
 
