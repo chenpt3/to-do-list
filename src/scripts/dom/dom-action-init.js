@@ -199,6 +199,7 @@ class DOMControl {
         this.determineTheme();
         this.determineOpenMenu();
         this.determineScreen();
+        this.determineMemory();
     };
 
     /**
@@ -270,6 +271,10 @@ class DOMControl {
             const currentScreen = document.querySelector('#welcome-screen');
             currentScreen.classList.remove('screen-hidden');
         };
+    };
+
+    determineMemory() {
+        return;
     };
 };
 
