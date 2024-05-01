@@ -1,11 +1,13 @@
-class welcomeScreen {
+import Screen from './screen.js';
+
+class HomeScreen extends Screen {
     constructor() {
-        this.renderScreenContent();
+        super('home');
+        this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
         const screenContent = `
-        <div class='welcome-screen-container'>
             <div class='welcome-screen-heading'>
                 <h1>Welcome to 'TODO-BOM'</h1> 
                 <h2>Your Personal Task Manager</h2>
@@ -16,15 +18,9 @@ class welcomeScreen {
                 <p>You can also start by adding tasks to the 'All Tasks' section (we'll sort it out for you).</p>
                 <p>Click on the 'Help' section to learn more about how to use this app.</p>
             </div>
-        </div>
         `;
         return screenContent;
     };
-
-    renderScreenContent() {
-        const screen = document.querySelector('#welcome-screen');
-        screen.innerHTML = this.getScreenContent();
-    };
 };
 
-export { welcomeScreen };
+export default HomeScreen;

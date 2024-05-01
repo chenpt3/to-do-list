@@ -1,7 +1,9 @@
-import { addTaskIcon } from "../../../assets/images/images";
-class allTasksScreen {
+import Screen from './screen.js';
+
+class AllTasksScreen extends Screen {
     constructor() {
-        this.renderScreenContent();
+        super('all-tasks');
+        this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
@@ -9,7 +11,7 @@ class allTasksScreen {
         <div class='allTasks-screen-container'>
             <div class='allTasks-screen-heading screen-heading'>
                 <h1>All Tasks</h1>
-                <img src=${addTaskIcon} alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
+                <img src='' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
             </div>
             <div class='allTasks-screen-text'>
                 <p>Here are all the tasks you have created, across all projects</p>
@@ -26,11 +28,6 @@ class allTasksScreen {
         `;
         return screenContent;
     };
-
-    renderScreenContent() {
-        const screen = document.querySelector('#allTasks-screen');
-        screen.innerHTML = this.getScreenContent();
-    };
 };
 
-export { allTasksScreen };
+export default AllTasksScreen;

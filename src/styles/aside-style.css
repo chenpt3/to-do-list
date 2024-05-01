@@ -11,10 +11,22 @@
 
 /* The container for the menu controls, with space between items */
 #menu-controls-container {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 50px;
+    display: flex;
+    height: 100px;
+    gap: 10px;
+    padding-right: 10px;
+}
+
+.menu-controls-closed {
+    flex-direction: column-reverse;
+    justify-content: start;
+}
+
+.menu-controls-open {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20px;
 }
 
 /* The profile section of the menu controls, with a column layout */

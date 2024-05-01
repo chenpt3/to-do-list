@@ -267,42 +267,6 @@ class TaskManager {
         this.clearProjects();
     };
 
-    save() {
-        localStorage.setItem("tasks", JSON.stringify(this.tasks));
-        localStorage.setItem("subtasks", JSON.stringify(this.subtasks));
-        localStorage.setItem("notes", JSON.stringify(this.notes));
-        localStorage.setItem("checklistItems", JSON.stringify(this.checklistItems));
-        localStorage.setItem("projects", JSON.stringify(this.projects));
-    };
-
-    load() {
-        const tasks = JSON.parse(localStorage.getItem("tasks"));
-        const subtasks = JSON.parse(localStorage.getItem("subtasks"));
-        const notes = JSON.parse(localStorage.getItem("notes"));
-        const checklistItems = JSON.parse(localStorage.getItem("checklistItems"));
-        const projects = JSON.parse(localStorage.getItem("projects"));
-
-        if (tasks) {
-            this.tasks = tasks;
-        };
-
-        if (subtasks) {
-            this.subtasks = subtasks;
-        };
-
-        if (notes) {
-            this.notes = notes;
-        };
-
-        if (checklistItems) {
-            this.checklistItems = checklistItems;
-        };
-
-        if (projects) {
-            this.projects = projects;
-        };
-    };
-
     populateTaskManagerTemporarilyForTesting() {
         this.addTask(1, "Task 1", "Description 1", new Date("2024-05-01"), "High", "Project 1", [], [], [], false);
         this.addTask(2, "Task 2", "Description 2", new Date("2024-05-05"), "Medium", "Project 2", [], [], [], false);
@@ -334,4 +298,4 @@ class TaskManager {
     };
 };
 
-export { TaskManager };
+export default TaskManager;

@@ -1,8 +1,9 @@
-import { addTaskIcon } from "../../../assets/images/images";
+import Screen from './screen.js';
 
-class importantScreen {
+class ImportantScreen extends Screen {
     constructor() {
-        this.renderScreenContent();
+        super('important');
+        this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
@@ -10,7 +11,7 @@ class importantScreen {
         <div class='important-screen-container'>
             <div class='allTasks-screen-heading screen-heading'>
                 <h1>All Tasks</h1>
-                <img src=${addTaskIcon} alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
+                <img src='' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
             </div>
             <div class='important-screen-text'>
                 <p>Here are all your important tasks, across all projects</p>
@@ -26,11 +27,6 @@ class importantScreen {
         `;
         return screenContent;
     };
-
-    renderScreenContent() {
-        const screen = document.querySelector('#important-screen');
-        screen.innerHTML = this.getScreenContent();
-    };
 };
 
-export { importantScreen };
+export default ImportantScreen;

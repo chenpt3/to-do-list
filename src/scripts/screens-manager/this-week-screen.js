@@ -1,8 +1,9 @@
+import Screen from './screen.js';
 
-import { addTaskIcon } from "../../../assets/images/images";
-class weekScreen {
+class ThisWeekScreen extends Screen {
     constructor() {
-        this.renderScreenContent();
+        super('this-week');
+        this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
@@ -10,7 +11,7 @@ class weekScreen {
             <div class='week-screen-container'>
                 <div class='allTasks-screen-heading screen-heading'>
                     <h1>All Tasks</h1>
-                    <img src=${addTaskIcon} alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
+                    <img src='' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
                 </div>
                 <div class='week-screen-text'>
                     <p>Here are all the tasks that are due in this week, across all projects</p>
@@ -25,11 +26,6 @@ class weekScreen {
         `;
         return screenContent;
     };
-
-    renderScreenContent() {
-        const screen = document.querySelector('#week-screen');
-        screen.innerHTML = this.getScreenContent();
-    };
 };
 
-export { weekScreen };
+export default ThisWeekScreen;

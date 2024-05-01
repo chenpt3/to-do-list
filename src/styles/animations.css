@@ -19,3 +19,33 @@
 .add-project-button-icon:hover {
     filter: var(--svg-hover-color);
 }
+
+p {
+    transition: color 0.5s ease;
+}
+
+#menu-controls-container {
+    transition: padding-left 0.5s ease, flex-direction 0.5s ease, justify-content 0.5s ease;
+}
+
+img {
+    transition: filter 0.5s ease;
+}
+
+div {
+    transition: background-color 0.5s ease;
+}
+
+/* Animate the screen class, such that whenever a screen display changes to grid, it will slide in from the right, and when it changes to none, it will slide out to the left */
+@keyframes slide-in {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.screen {
+    animation: slide-in 0.5s ease;
+}

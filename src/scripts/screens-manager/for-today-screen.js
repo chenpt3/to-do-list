@@ -1,8 +1,9 @@
-import { addTaskIcon } from "../../../assets/images/images";
+import Screen from './screen.js';
 
-class todayScreen {
+class ForTodayScreen extends Screen {
     constructor() {
-        this.renderScreenContent();
+        super('for-today');
+        this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
@@ -10,7 +11,7 @@ class todayScreen {
             <div class='today-screen-container'>
                 <div class='today-screen-heading screen-heading'>
                     <h1>Today's Tasks</h1>
-                    <img src=${addTaskIcon} alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
+                    <img src='' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon'>
                 </div>
                 <div class='today-screen-text'>
                     <p>Here are all the tasks that are due in today, across all projects</p>
@@ -26,11 +27,6 @@ class todayScreen {
         `;
         return screenContent;
     };
-
-    renderScreenContent() {
-        const screen = document.querySelector('#today-screen');
-        screen.innerHTML = this.getScreenContent();
-    };
 };
 
-export { todayScreen };
+export default ForTodayScreen;
