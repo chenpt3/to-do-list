@@ -61,6 +61,7 @@ class MainCreator {
         this.addScreen(main, 'add-task');
         this.addScreen(main, 'edit-task');
         this.addScreen(main, 'edit-project');
+        this.addScreen(main, 'active-task');
     };
 };
 

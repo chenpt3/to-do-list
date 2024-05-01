@@ -115,7 +115,7 @@ class MenuCreator {
      * @param {HTMLElement} projectsContainer - The container to add the projects list to.
      */
     addProjectsList(projectsContainer) {
-        const projectsList = this.domCreator.createElement('div', 'projects-list');
+        const projectsList = this.domCreator.createElement('div', 'projects-list', 'menu-button-text');
         this.domCreator.appendChild(projectsContainer, projectsList);
 
         const projectsListContent = this.domCreator.createElement('div', 'projects-list-content');

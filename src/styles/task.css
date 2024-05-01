@@ -1,116 +1,273 @@
-/* Task List */
-.task-list, .screen-projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    white-space: nowrap;
-}
-
-/* Task body */
 .task-body, .project-body {
-    display: grid;
-    grid-template-columns: 20% 30% 1fr 10%;
-    gap: 10px;
-    background-color: var(--task-bg-color);
+    display: flex;
+    flex-direction: column;
+    background-color: #7d7d7d;
+    white-space: nowrap;
+    margin: 20px;
     border-radius: 10px;
-    height: 100px;
-    overflow: scroll;
-    align-items: center;
-    padding: 0 20px;
-    min-width: 1000px;
+    padding: 20px;
 }
 
-/* Task header */
-.task-header {
-    grid-column: 1;
-    display: flex;
-    justify-content: start;
-    flex-direction: column;
-    height: 90px;
-}
-
-.task-header h3 {
-    font-size: 2.4rem;
-}
-
-.task-header p {
-    font-size: 0.8rem;
-}
-
-/* Task stats */
-.task-stats {
-    grid-column: 2;
+.task-header, .project-header {
     display: grid;
-    grid-template-areas: 'project priority' 'description description' 'description description' 'description description';
-    height: 90px;
+    grid-template-areas: "task-title task-description task-due-in task-priority task-complete-button" "task-title task-description task-due-date task-status task-complete-button";
+    grid-template-columns: 1fr 30% 17% 17% 10%;
+    grid-template-rows: 1fr 1fr;
+    text-align: center;
+    gap: 15px;
 }
 
-/* Task actions */
-.task-actions {
-    grid-column: 3;
-    height: 90px;
+.task-title, .project-title{
+    grid-area: task-title;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-description, .project-description{
+    grid-area: task-description;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-due-in, .project-due-in{
+    grid-area: task-due-in;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-due-date, .project-due-date{
+    grid-area: task-due-date;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-priority, .project-priority{
+    grid-area: task-priority;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-status, .project-status{
+    grid-area: task-status;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-complete-button, .project-complete-button{
+    grid-area: task-complete-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-info {
+    height: 0;
+    overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'id subtasks subtasks checklist checklist notes notes edit-button' 'project subtasks subtasks checklist checklist notes notes reopen-button' 'project subtasks subtasks checklist checklist notes notes empty' 'project-button add-subtasks-button edit-subtasks-button add-checklist-button edit-checklist-button add-notes-button edit-notes-button open-ticket';
+    text-align: center;
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 1fr 1fr 10%;
+    gap: 15px;
+    transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
 }
 
-/* Task buttons */
-.task-buttons {
-    grid-column: 4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    height: 90px;
+.task-info.open, .project-info.open {
+    height: 180px;
+    margin-top: 30px;
 }
 
-/* Task stat */
-.task-stat {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
-}
-
-.description-stat {
-    grid-area: description;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    justify-self: start;
-}
-
-/* Task stats title */
-.task-stat-title {
-    font-weight: bold;
-}
-
-/* Edit task button */
-.edit-task-button {
-    background-color: #007BFF;
-    color: white;
-    padding: 5px;
+.task-id {
+    grid-area: id;
+    border: 1px solid black;
     border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
 }
 
-.edit-task-button:hover {
-    background-color: #0056b3;
-}
-
-/* Complete task button */
-.complete-task-button {
-    background-color: #28A745;
-    color: white;
-    padding: 5px;
+.task-project {
+    grid-area: project;
+    border: 1px solid black;
     border-radius: 5px;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s ease;
 }
 
-.complete-task-button:hover {
-    background-color: #1e7e34;
+.task-assign-to-project {
+    grid-area: project-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-change-project {
+    grid-area: project-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-subtasks {
+    grid-area: subtasks;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-add-subtask-button {
+    grid-area: add-subtasks-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-edit-subtasks-button {
+    grid-area: edit-subtasks-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-notes {
+    grid-area: notes;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-add-note-button {
+    grid-area: add-notes-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-edit-notes-button {
+    grid-area: edit-notes-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-checklist {
+    grid-area: checklist;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-add-checklist-item-button {
+    grid-area: add-checklist-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-edit-checklist-button {
+    grid-area: edit-checklist-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-edit-button {
+    grid-area: edit-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.task-uncomplete-button {
+    grid-area: reopen-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.open-task-button {
+    grid-area: open-ticket;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-info {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-out;
+    display: grid;
+    grid-template-areas: 
+    'project-id project-tasks-header project-tasks-header project-checklist project-checklist project-notes project-notes project-edit-button' 
+    'project-tasks project-tasks project-tasks project-checklist project-checklist project-notes project-notes project-reopen-button' 
+    'project-tasks project-tasks project-tasks project-checklist project-checklist project-notes project-notes empty1' 
+    'project-tasks project-tasks project-tasks project-checklist project-checklist project-notes project-notes empty2' 
+    'project-add-task-button project-edit-tasks-button empty4 project-add-checklist-item-button project-edit-checklist-button project-add-note-button project-edit-notes-button open-project';
+    grid-template-columns: 15% 1fr 1fr 1fr 1fr 1fr 1fr 10%;
+    text-align: center;
+    gap: 15px;
+    transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
+}
+
+.project-id {
+    grid-area: project-id;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-tasks-header {
+    grid-area: project-tasks-header;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-tasks {
+    grid-area: project-tasks;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-add-task-button {
+    grid-area: project-add-task-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-edit-tasks-button {
+    grid-area: project-edit-tasks-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-notes {
+    grid-area: project-notes;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-add-note-button {
+    grid-area: project-add-note-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-edit-notes-button {
+    grid-area: project-edit-notes-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-checklist {
+    grid-area: project-checklist;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-add-checklist-item-button {
+    grid-area: project-add-checklist-item-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-edit-checklist-button {
+    grid-area: project-edit-checklist-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-edit-button {
+    grid-area: project-edit-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.project-uncomplete-button {
+    grid-area: project-reopen-button;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.open-project-button {
+    grid-area: open-project;
+    border: 1px solid black;
+    border-radius: 5px;
 }

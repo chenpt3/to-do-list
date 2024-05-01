@@ -4,7 +4,7 @@ import { format, add, isWithinInterval } from 'date-fns';
  * Populator class is responsible for managing tasks and projects, 
  * populating them on the screen, and handling their events.
  */
-class TasksAppender {
+class TasksPupulator {
     /**
      * Constructor initializes the task manager and DOM control, 
      * and populates the screens.
@@ -26,7 +26,6 @@ class TasksAppender {
         this.populateImportantScreen();
         this.populateCompletedScreen();
         this.populateAllProjectsScreen();
-        this.addEventListeners();
     };
 
     /**
@@ -43,9 +42,10 @@ class TasksAppender {
         taskElement.innerHTML = `
             <div class='task-header'>
                 <div class='task-title'>
-                    <h3>${task.title}</h3>
+                    <h2>${task.title}</h2>
                 </div>
                 <div class='task-description'>
+                    <h4>Description:</h4>
                     <p>${task.description}</p>
                 </div>
                 <div class='task-status'>
@@ -63,9 +63,12 @@ class TasksAppender {
                         task.dueDate.getMonth() < 9 ? `0${task.dueDate.getMonth() + 1}` : task.dueDate.getMonth() + 1}/${
                         task.dueDate.getFullYear()
                     }</p>
-                </div<
+                </div>
+                <div class='task-complete-button'>
+                    <button>Complete</button>
+                </div>
             </div>
-            <div class='task-body hidden'>
+            <div class='task-info'>
                 <div class='task-id'>
                     <p>ID: ${task.taskId}</p>
                 </div>
@@ -73,10 +76,10 @@ class TasksAppender {
                     <p>Project: <span>${task.project}<span></p>
                 </div>
                 <div class='task-assign-to-project'>
-                    <button>Assign to Project</button>
+                    <button id="task-assign-to-project-button" class="modal-opener" data-modal='assign-task-to-project'>Assign to Project</button>
                 </div>
-                <div class='task-change-project hidden'>
-                    <button>Change Project</button>
+                <div class='task-change-project'>
+                    <button id='task-change-project-button' class="modal-opener" data-modal='change-task-project'>Change Project</button>
                 </div>
                 <div class='task-subtasks'>
                     <ul> Subtasks:
@@ -88,7 +91,10 @@ class TasksAppender {
                     </ul>
                 </div>
                 <div class='task-add-subtask-button'>
-                    <button>Add Subtask</button>
+                    <button id='task-add-subtask-button' class="modal-opener" data-modal='add-subtask'>Add Subtask</button>
+                </div>
+                <div class='task-edit-subtasks-button'>
+                    <button id='task-edit-subtask-button' class="modal-opener" data-modal='edit-subtask'>Edit Subtask</button>
                 </div>
                 <div class='task-notes'>
                     <ul> Notes:
@@ -100,7 +106,10 @@ class TasksAppender {
                     </ul>
                 </div>
                 <div class='task-add-note-button'>
-                    <button>Add Note</button>
+                    <button id='task-add-note-button' class="modal-opener" data-modal='add-note'>Add Note</button>
+                </div>
+                <div class='task-edit-notes-button'>
+                    <button id='task-edit-notes-button' class="modal-opener" data-modal='edit-note'>Edit Notes</button>
                 </div>
                 <div class='task-checklist'>
                     <ul> Checklist:
@@ -112,16 +121,19 @@ class TasksAppender {
                     </ul>
                 </div>
                 <div class='task-add-checklist-item-button'>
-                    <button>Add Checklist Item</button>
+                    <button id='task-add-checklist-button' class="modal-opener" data-modal='add-checklist'>Add Checklist Item</button>
+                </div>
+                <div class='task-edit-checklist-button'>
+                    <button id='task-edit-checklist-button' class="modal-opener" data-modal='edit-checklist'>Edit Checklist</button>
                 </div>
                 <div class='task-edit-button'>
-                    <button>Edit</button>
+                    <button id='task-edit-task-button' class="screen-changer" data-screen='edit-task'>Edit Task</button>
                 </div>
-                <div class='task-complete-button'>
-                    <button>Complete</button>
+                <div class='task-uncomplete-button'>
+                    <button id='task-uncomplete-task-button' class="modal-opener" data-modal='uncomplete-task'>Uncomplete Task</button>
                 </div>
-                <div class='task-reopen-button hidden'>
-                    <button>Reopen</button>
+                <div class='open-task-button'>
+                    <button id='task-open-task-button' class="screen-changer" data-screen='active-task'>Open Task</button>
                 </div>
             </div>
         `;
@@ -151,45 +163,6 @@ class TasksAppender {
     };
 
     /**
-     * addEventListeners method adds event listeners to the task and project buttons.
-     */
-    addEventListeners() {
-        const editTaskButtons = document.querySelectorAll('.edit-task-button');
-        const completeTaskButtons = document.querySelectorAll('.complete-task-button');
-        editTaskButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const taskDiv = e.target.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
-                this.taskManager.getTaskByTitle(taskDiv);
-                this.domControl.editTaskForm();
-            });
-        });
-        completeTaskButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const taskDiv = e.target.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
-                this.taskManager.getTaskByTitle(taskDiv).completed = true;
-                this.populateScreens();
-            });
-        });
-
-        const editProjectButtons = document.querySelectorAll('.edit-project-button');
-        const completeProjectButtons = document.querySelectorAll('.complete-project-button');
-        editProjectButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const projectDiv = e.target.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
-                this.taskManager.getProjectByTitle(projectDiv);
-                this.domControl.editProjectForm();
-            });
-        });
-        completeProjectButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const projectDiv = e.target.parentElement.parentElement.childNodes[1].childNodes[1].innerText;
-                this.taskManager.getProjectByTitle(projectDiv).completed = true;
-                this.populateScreens();
-            });
-        });
-    };
-
-    /**
      * populateAllTasksScreen method populates the allTasks screen with tasks.
      */
     populateAllTasksScreen() {
@@ -198,7 +171,7 @@ class TasksAppender {
             if (task.completed === true) {
                 return;
             };
-            this.addTaskToScreen(task, 'allTasks');
+            this.addTaskToScreen(task, 'all-tasks');
         });
     };
 
@@ -268,7 +241,6 @@ class TasksAppender {
      */
     populateAllProjectsScreen() {
         const openProjects = this.taskManager.projects.filter(project => project.completed !== true);
-        const projectsScreen = document.querySelector('#allProjects-screen');
         openProjects.forEach(project => {
             const projectElement = document.createElement('div');
             projectElement.innerHTML = `
@@ -294,14 +266,20 @@ class TasksAppender {
                         project.dueDate.getMonth() < 9 ? `0${project.dueDate.getMonth() + 1}` : project.dueDate.getMonth() + 1}/${
                         project.dueDate.getFullYear()
                     }</p>
-                </div<
+                </div>
+                <div class='project-complete-button'>
+                    <button>Complete</button>
+                </div>
             </div>
-            <div class='project-body'>
+            <div class='project-info'>
                 <div class='project-id'>
                     <p>ID: ${project.projectId}</p>
                 </div>
+                <div class='project-tasks-header'>
+                    <p>Tasks:</p>
+                </div>
                 <div class='project-tasks'>
-                    <ul> Tasks:
+                    <ul>
                         ${this.taskManager.tasks.map(task => {
                             if (task.project === project.title) {
                                 return `<li>${task.title}</li>`;
@@ -310,7 +288,10 @@ class TasksAppender {
                     </ul>
                 </div>
                 <div class='project-add-task-button'>
-                    <button>Add Task</button>
+                    <button id='project-add-task-button' class='screen-changer' data-screen='add-task'>Add Task</button>
+                </div>
+                <div class='project-edit-tasks-button'>
+                    <button id='project-edit-task-button' class='screen-changer' data-screen='edit-task'>Edit Task</button>
                 </div>
                 <div class='project-notes'>
                     <ul> Notes:
@@ -322,7 +303,10 @@ class TasksAppender {
                     </ul>
                 </div>
                 <div class='project-add-note-button'>
-                    <button>Add Note</button>
+                    <button id='project-add-notes-button' class="modal-opener" data-modal='add-note'>Add Note</button>
+                </div>
+                <div class='project-edit-notes-button'>
+                    <button id='project-edit-notes-button' class="modal-opener" data-modal='edit-note'>Edit Notes</button>
                 </div>
                 <div class='project-checklist'>
                     <ul> Checklist:
@@ -333,14 +317,20 @@ class TasksAppender {
                         }).join('')}
                     </ul>
                 </div>
+                <div class='project-add-checklist-item-button'>
+                    <button id='project-add-checklist-button data-modal='add-checklist' class="modal-opener">Add Checklist Item</button>
+                </div>
+                <div class='project-edit-checklist-button'>
+                    <button id='project-edit-checklist-button' class="modal-opener" data-modal='edit-checklist'>Edit Checklist</button>
+                </div>
                 <div class='project-edit-button'>
-                    <button>Edit</button>
+                    <button id='project-edit-project-button' class="screen-changer" data-screen='edit-project'>Edit Project</button>
                 </div>
-                <div class='project-complete-button'>
-                    <button>Complete</button>
+                <div class='project-uncomplete-button'>
+                    <button id='project-uncomplete-project-button' class="modal-opener" data-modal='uncomplete-project'>Uncomplete</button>
                 </div>
-                <div class='project-reopen-button hidden'>
-                    <button>Reopen</button>
+                <div class='open-project-button'>
+                    <button id='project-open-project-button' class="screen-changer" data-screen='active-project'>Open Project</button>
                 </div>
             </div>
             `;
@@ -350,4 +340,4 @@ class TasksAppender {
     };
 };
 
-export default TasksAppender;
+export default TasksPupulator;

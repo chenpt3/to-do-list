@@ -1,9 +1,6 @@
-.visible-modal {
-    display: block !important;
-}
 
-#modals-container {
-    display: none;
+
+.modal {
     position: fixed;
     z-index: 1;
     left: 0;
@@ -14,7 +11,7 @@
     background-color: var(--modal-screen-bg-color)
 }
 
-.modal {
+.modal-content {
     background-color: var(--modal-bg-color);
     margin: 15% auto;
     padding: 20px;

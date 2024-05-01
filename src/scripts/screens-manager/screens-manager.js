@@ -14,6 +14,7 @@ import AddProjectScreen from './add-project-screen.js';
 import EditProjectScreen from './edit-project-screen.js';
 import AddTaskScreen from './add-task-screen.js';
 import EditTaskScreen from './edit-task-screen.js';
+import ActiveTaskScreen from './active-task-screen.js';
 
 class ScreensManager {
     constructor() {
@@ -33,6 +34,7 @@ class ScreensManager {
         new EditProjectScreen();
         new AddTaskScreen();
         new EditTaskScreen();
+        new ActiveTaskScreen();
     };
 };
 

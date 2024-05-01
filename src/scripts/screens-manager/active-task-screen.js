@@ -3,13 +3,15 @@ import returnIcon from '../../assets/return.svg';
 import forwardIcon from '../../assets/forward.svg';
 import closeIcon from '../../assets/close.svg';
 
-class AddProjectScreen extends Screen {
+
+class ActiveTaskScreen extends Screen {
     constructor() {
-        super('add-project');
+        super('active-task');
         this.screen.innerHTML = this.getScreenContent();
     };
 
     getScreenContent() {
+
         const screenContent = `
         <div class="screen-header">
             <div class="nav-buttons">
@@ -17,7 +19,7 @@ class AddProjectScreen extends Screen {
                 <img src='${forwardIcon}' alt='Forward' id='forward-button-icon' class='forward-button-icon'>
             </div>
             <div class="screen-title">
-                <h1>Add Project</h1>
+                <h1>Active Task</h1>
             </div>
             <div class="screen-actions">
                 <img src='${closeIcon}' alt='Close' id='close-button-icon' class='close-button-icon'>
@@ -28,4 +30,4 @@ class AddProjectScreen extends Screen {
     };
 };
 
-export default AddProjectScreen;
+export default ActiveTaskScreen;

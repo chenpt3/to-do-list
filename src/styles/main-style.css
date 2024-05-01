@@ -14,26 +14,68 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 95%;
     width: 95%;
-    padding: 30px;
+    padding: 20px;
     overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .screen-hidden {
     display: none;
 }
 
-.screen-heading {
+.screen-header {
     display: flex;
     justify-content: space-between;
+    align-items: start;
+    padding-bottom: 25px;
 }
 
-.screen-heading h1 {
-    font-size: 1.5rem;
+.nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 90px;
+    gap: 15px;
+}
+
+.nav-buttons img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.screen-actions {
+    display: flex;
+    justify-content: end;
+    width: 90px;
+    gap: 15px;
+}
+
+.screen-actions img {
+    width: 40px;
+    cursor: pointer;
+}
+
+.screen-title {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0;
+    line-height: 3.4rem;
+}
+
+.screen-header h1 {
+    font-size: 3.5rem;
     font-weight: 500;
     color: var(--text-color);
+    text-align: center;
 }
 
-.screen-heading img {
-    width: 50px;
-    cursor: pointer;
+.main-logo-icon {
+    justify-self: center;
+}
+
+.disabled {
+    filter: invert(61%) sepia(0%) saturate(494%) hue-rotate(218deg) brightness(92%) contrast(80%);
+    cursor: default !important;
 }

@@ -1,4 +1,8 @@
 import Screen from './screen.js';
+import addProjectButton from '../../assets/add-project.svg';
+import returnIcon from '../../assets/return.svg';
+import forwardIcon from '../../assets/forward.svg';
+import closeIcon from '../../assets/close.svg';
 
 class AllProjectsScreen extends Screen {
     constructor() {
@@ -8,20 +12,30 @@ class AllProjectsScreen extends Screen {
 
     getScreenContent() {
         const screenContent = `
-        <div class='allProject-screen-container'>
-            <div class='allProject-screen-heading screen-heading'>
+        <div class="screen-header">
+            <div class="nav-buttons">
+                <img src='${returnIcon}' alt='Return' id='return-button-icon' class='return-button-icon screen-'>
+                <img src='${forwardIcon}' alt='Forward' id='forward-button-icon' class='forward-button-icon'>
+            </div>
+            <div class="screen-title">
                 <h1>All Projects</h1>
-                <img src='' alt='Add Project' id='add-project-button-icon' class='add-project-button-icon'>
             </div>
-            <div class='allProject-screen-text'>
-                <p>Here are all the projects you have created</p>
+            <div class="screen-actions">
+                <img src='${addProjectButton}' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon screen-changer' data-screen='add-task'>
+                <img src='${closeIcon}' alt='Close' id='close-button-icon' class='close-button-icon'>
             </div>
-            <div class='allProject-screen-tasks'>
-                <div class='allProject-screen-tasks-heading'>
-                    <h2>Projects</h2>
-                </div>
-                <div class='projects-screen-projects-list screen-projects-list'>
-                </div>
+        </div>
+        <div class='all-project-screen-heading screen-heading'>
+            <h1>All Projects</h1>
+        </div>
+        <div class='all-project-screen-text'>
+            <p>Here are all the projects you have created</p>
+        </div>
+        <div class='all-project-screen-tasks'>
+            <div class='all-project-screen-tasks-heading'>
+                <h2>Projects</h2>
+            </div>
+            <div class='projects-screen-projects-list screen-projects-list'>
             </div>
         </div>
         `;
