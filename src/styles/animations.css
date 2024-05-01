@@ -35,17 +35,15 @@ img {
 div {
     transition: background-color 0.5s ease;
 }
-
-/* Animate the screen class, such that whenever a screen display changes to grid, it will slide in from the right, and when it changes to none, it will slide out to the left */
-@keyframes slide-in {
+@keyframes fade-in {
     from {
-        transform: translateX(100%);
+        opacity: 0.7;
     }
     to {
-        transform: translateX(0);
+        opacity: 1;
     }
 }
 
 .screen {
-    animation: slide-in 0.5s ease;
+    animation: fade-in 0.25s ease-in-out;
 }

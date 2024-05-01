@@ -1,0 +1,79 @@
+
+.add-task-form {
+    display: grid;
+    grid-template-areas: 
+        "title subtasks subtasks subtasks checklist"
+        "priority subtasks subtasks subtasks checklist"
+        "due-date subtasks subtasks subtasks checklist"
+        "project subtasks subtasks subtasks checklist"
+        "project subtasks subtasks subtasks checklist"
+        "description description notes notes checklist"
+        "description description notes notes checklist"
+        "description description notes notes checklist"
+        "description description notes notes checklist"
+        "description description notes notes checklist"
+        "empty submit empty2 clear empty3";
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+    gap: 10px;
+}
+
+.add-task-form img {
+    width: 30px;
+}
+
+.title-form-group {
+    grid-area: title;
+    border: 1px solid #ccc;
+}
+
+.description-form-group {
+    grid-area: description;
+    border: 1px solid #ccc;
+}
+
+.due-date-form-group {
+    grid-area: due-date;
+    border: 1px solid #ccc;
+}
+
+.priority-form-group {
+    grid-area: priority;
+    border: 1px solid #ccc;
+}
+
+.project-assign-form-group {
+    grid-area: project;
+    border: 1px solid #ccc;
+}
+
+.subtasks-form-group {
+    grid-area: subtasks;
+    border: 1px solid #ccc;
+
+}
+
+.notes-form-group {
+    grid-area: notes;
+    border: 1px solid #ccc;
+
+}
+
+.checklist-form-group {
+    grid-area: checklist;
+    border: 1px solid #ccc;
+
+}
+
+.add-task-submit-button {
+    grid-area: submit;
+    border: 1px solid #ccc;
+}
+
+.add-task-clear-button {
+    grid-area: clear;
+    border: 1px solid #ccc;
+
+}
