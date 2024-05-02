@@ -288,9 +288,9 @@ class TaskManager {
         this.addProject(2, "Project 2", [], "Description 2", format(new Date(), "yyyy-MM-dd"), "Medium", [], [], false);
         this.addProject(3, "Project 3", [], "Description 3", format(new Date(), "yyyy-MM-dd"), "Low", [], [], false);
 
-        this.addChecklistItem(4, "Checklist Item 4", false, "Project 1");
-        this.addChecklistItem(5, "Checklist Item 5", false, "Project 2");
-        this.addChecklistItem(6, "Checklist Item 6", false, "Project 3");
+        this.addChecklistItem(4, "Checklist Item 4", false, 1);
+        this.addChecklistItem(5, "Checklist Item 5", false, 2);
+        this.addChecklistItem(6, "Checklist Item 6", false, 3);
 
         this.addNote(4, "Note 4", "Content 4", "Project 1");
         this.addNote(5, "Note 5", "Content 5", "Project 2");

@@ -5,13 +5,14 @@ import ModalEvents from "./modal-events";
 import NavManager from "./nav-manager";
 
 class EventsManager {
-    constructor(domManager, populator, modalsManager, screensManager) {
+    constructor(domManager, populator, modalsManager, screensManager, taskManager) {
         this.nav = new NavManager();
         this.domManager = domManager;
         this.populator = populator;
         this.modalsManager = modalsManager;
         this.screensManager = screensManager;
-        new ModalEvents(this.modalsManager);
+        this.taskManager = taskManager;
+        new ModalEvents(this.modalsManager, this.taskManager);
         new ScreenChange(this.nav);
         new ColorTheme();
         new MenuToggle();

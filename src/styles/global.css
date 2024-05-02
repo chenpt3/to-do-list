@@ -39,39 +39,42 @@ html.dark {
 }
 
 html.light {
-  --bg-color: #FAF9F6;
-  --header-bg-color: #f5f5f5;
-  --menu-bg-color: #f5f5f5;
-  --main-bg-color: #f5f5f5;
-  --footer-bg-color: #f5f5f5;
-  --menu-projects-bg-color: #f5f5f5;
-  --modal-bg-color: #f5f5f5;
-  --modal-screen-bg-color: rgba(0, 0, 0, 0.7);
-  --task-bg-color: #f5f5f5;
-  --task-bg-color-hover: #e0e0e0;
-  --project-bg-color: #f5f5f5;
-  --project-bg-color-hover: #e0e0e0;
-  --note-bg-color: #f5f5f5;
-  --note-bg-color-hover: #e0e0e0;
-  --checklist-bg-color: #f5f5f5;
-  --checklist-bg-color-hover: #e0e0e0;
-  --description-bg-color: #f5f5f5;
-  --description-bg-color-hover: #e0e0e0;
-  --secondary-bg-color: #f5f5f5;
-  --text-color: #1a1a1a;
+  --bg-color: #f5f5f5;
+  --header-bg-color: #e0e0e0;
+  --menu-bg-color: #ffffff;
+  --main-bg-color: #e0e0e0;
+  --footer-bg-color: #e0e0e0;
+  --menu-projects-bg-color: #e0e0e0;
+  --modal-bg-color: #e0e0e0;
+  --modal-screen-bg-color: rgba(255, 255, 255, 0.7);
+  --task-bg-color: #e0e0e0;
+  --task-bg-color-hover: #d0d0d0;
+  --project-bg-color: #e0e0e0;
+  --project-bg-color-hover: #d0d0d0;
+  --note-bg-color: #e0e0e0;
+  --note-bg-color-hover: #d0d0d0;
+  --checklist-bg-color: #e0e0e0;
+  --checklist-bg-color-hover: #d0d0d0;
+  --description-bg-color: #e0e0e0;
+  --description-bg-color-hover: #d0d0d0;
+  --secondary-bg-color: #cecece;
+  --text-color: #333;
   --inverted-text-color: #f5f5f5;
-  --menu-text-color: #1a1a1a;
-  --faded-text-color: #b3b3b3;
-  --svg-color: invert(0%) sepia(1%) saturate(3%) hue-rotate(326deg) brightness(97%) contrast(104%);
-  --inverted-svg-color: invert(100%) sepia(37%) saturate(1%) hue-rotate(290deg) brightness(112%) contrast(101%);
+  --menu-text-color: #333;
+  --faded-text-color: #666;
+  --inverted-svg-color: invert(100%) sepia(1%) saturate(3%) hue-rotate(326deg) brightness(97%) contrast(104%);
+  --svg-color: invert(0%) sepia(37%) saturate(1%) hue-rotate(290deg) brightness(112%) contrast(101%);
   --svg-hover-color: invert(42%) sepia(55%) saturate(620%) hue-rotate(54deg) brightness(105%) contrast(95%);
   --accent-color: #6a9955;
   --accent-color-hover: #577f44;
   --secondary-accent-color: #9c64a6;
   --secondary-accent-color-hover: #7e4f83;
-  --menu-button-hover-bg-color: #e0e0e0;
-  --header-button-hover-bg-color: #e0e0e0;
-  --main-button-bg-color: #f5f5f5;
+  --menu-button-hover-bg-color: #d0d0d0;
+  --header-button-hover-bg-color: #d0d0d0;
+  --main-button-bg-color: #d0d0d0;
+  --main-button-secondary-bg-color: #d0d0d0;
+  --main-button-hover-bg-color: #c0c0c0;
+  --main-button-secondary-hover-bg-color: #c0c0c0;
 }
 
 body {

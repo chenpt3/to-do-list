@@ -91,12 +91,15 @@
     grid-area: project-button;
     border: 1px solid black;
     border-radius: 5px;
+    display: none;
+
 }
 
 .task-change-project {
     grid-area: project-button;
     border: 1px solid black;
     border-radius: 5px;
+
 }
 
 .task-subtasks {

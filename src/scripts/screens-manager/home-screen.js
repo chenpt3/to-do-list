@@ -25,7 +25,6 @@ class HomeScreen extends Screen {
             </div>
         </div>
         <div class='welcome-screen-heading'>
-            <h1>Welcome to 'TODO-BOM'</h1> 
             <h2>Your Personal Task Manager</h2>
         </div>
         <div class='welcome-screen-text'>

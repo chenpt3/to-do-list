@@ -76,10 +76,10 @@ class TasksPupulator {
                     <p>Project: <span>${task.project}<span></p>
                 </div>
                 <div class='task-assign-to-project'>
-                    <button id="task-assign-to-project-button" class="modal-opener" data-modal='assign-task-to-project'>Assign to Project</button>
+                    <button id="task-assign-to-project-button" class="modal-opener" data-modal='assign-task-to-project' data-taskId='${task.taskId}'>Assign to Project</button>
                 </div>
                 <div class='task-change-project'>
-                    <button id='task-change-project-button' class="modal-opener" data-modal='change-task-project'>Change Project</button>
+                    <button id='task-change-project-button' class="modal-opener" data-modal='change-task-project' data-taskId='${task.taskId}'>Change Project</button>
                 </div>
                 <div class='task-subtasks'>
                     <ul> Subtasks:
@@ -91,10 +91,10 @@ class TasksPupulator {
                     </ul>
                 </div>
                 <div class='task-add-subtask-button'>
-                    <button id='task-add-subtask-button' class="modal-opener" data-modal='add-subtask'>Add Subtask</button>
+                    <button id='task-add-subtask-button' class="modal-opener" data-modal='add-subtask' data-taskId='${task.taskId}'>Add Subtask</button>
                 </div>
                 <div class='task-edit-subtasks-button'>
-                    <button id='task-edit-subtask-button' class="modal-opener" data-modal='edit-subtask'>Edit Subtask</button>
+                    <button id='task-edit-subtask-button' class="modal-opener" data-modal='edit-subtask' data-taskId='${task.taskId}'>Edit Subtask</button>
                 </div>
                 <div class='task-notes'>
                     <ul> Notes:
@@ -106,10 +106,10 @@ class TasksPupulator {
                     </ul>
                 </div>
                 <div class='task-add-note-button'>
-                    <button id='task-add-note-button' class="modal-opener" data-modal='add-note'>Add Note</button>
+                    <button id='task-add-note-button' class="modal-opener" data-modal='add-note' data-taskId='${task.taskId}'>Add Note</button>
                 </div>
                 <div class='task-edit-notes-button'>
-                    <button id='task-edit-notes-button' class="modal-opener" data-modal='edit-note'>Edit Notes</button>
+                    <button id='task-edit-notes-button' class="modal-opener" data-modal='edit-note' data-taskId='${task.taskId}'>Edit Notes</button>
                 </div>
                 <div class='task-checklist'>
                     <ul> Checklist:
@@ -121,19 +121,19 @@ class TasksPupulator {
                     </ul>
                 </div>
                 <div class='task-add-checklist-item-button'>
-                    <button id='task-add-checklist-button' class="modal-opener" data-modal='add-checklist'>Add Checklist Item</button>
+                    <button id='task-add-checklist-button' class="modal-opener" data-modal='add-checklist' data-taskId='${task.taskId}'>Add Checklist Item</button>
                 </div>
                 <div class='task-edit-checklist-button'>
-                    <button id='task-edit-checklist-button' class="modal-opener" data-modal='edit-checklist'>Edit Checklist</button>
+                    <button id='task-edit-checklist-button' class="modal-opener" data-modal='edit-checklist' data-taskId='${task.taskId}'>Edit Checklist</button>
                 </div>
                 <div class='task-edit-button'>
-                    <button id='task-edit-task-button' class="screen-changer" data-screen='edit-task'>Edit Task</button>
+                    <button id='task-edit-task-button' class="screen-changer" data-screen='edit-task' data-taskId='${task.taskId}'>Edit Task</button>
                 </div>
                 <div class='task-uncomplete-button'>
-                    <button id='task-uncomplete-task-button' class="modal-opener" data-modal='uncomplete-task'>Uncomplete Task</button>
+                    <button id='task-uncomplete-task-button' class="modal-opener" data-modal='uncomplete-task' data-taskId='${task.taskId}'>Uncomplete Task</button>
                 </div>
                 <div class='open-task-button'>
-                    <button id='task-open-task-button' class="screen-changer" data-screen='active-task'>Open Task</button>
+                    <button id='task-open-task-button' class="screen-changer" data-screen='active-task' data-taskId='${task.taskId}'>Open Task</button>
                 </div>
             </div>
         `;

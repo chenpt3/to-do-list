@@ -20,7 +20,7 @@ class AdminControl {
         this.modals = new ModalsManager();
         this.tasks = new TasksManager();
         this.pop = new TasksPupulator(this.tasks);
-        this.events = new EventsManager(this.tasks, this.pop, this.modals, this.dom, this.screens);
+        this.events = new EventsManager(this.dom, this.pop, this.modals, this.screens, this.tasks);
     };
 };
 
