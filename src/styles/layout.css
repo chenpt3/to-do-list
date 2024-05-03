@@ -4,7 +4,7 @@
   grid-template-areas: 
     "aside header"
     "aside main"
-    "footer footer";
+    "aside footer";
   height: 100%;
   width: 100%;
   transition: grid-template-columns 0.5s ease;
@@ -18,6 +18,10 @@
 .menu-close {
   grid-template-columns: 80px minmax(80%, 1fr);
   grid-template-rows: auto 1fr auto;
+}
+
+body {
+  overflow-y: scroll;
 }
 
 /* Header */
