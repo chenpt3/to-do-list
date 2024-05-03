@@ -5,7 +5,6 @@
     padding: 15px 10px 10px 20px;
     gap: 40px;
     background-color: var(--menu-bg-color);
-    overflow-y: scroll;
     white-space: nowrap;
 }
 

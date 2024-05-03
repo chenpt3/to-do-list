@@ -61,7 +61,7 @@
 
 .task-info {
     height: 0;
-    overflow: hidden;
+    : hidden;
     display: grid;
     grid-template-areas: 'id subtasks subtasks checklist checklist notes notes edit-button' 'project subtasks subtasks checklist checklist notes notes reopen-button' 'project subtasks subtasks checklist checklist notes notes empty' 'project-button add-subtasks-button edit-subtasks-button add-checklist-button edit-checklist-button add-notes-button edit-notes-button open-ticket';
     text-align: center;
@@ -176,7 +176,6 @@
 
 .project-info {
     height: 0;
-    overflow: hidden;
     transition: height 0.5s ease-out;
     display: grid;
     grid-template-areas: 

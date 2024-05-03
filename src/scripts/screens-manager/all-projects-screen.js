@@ -21,7 +21,7 @@ class AllProjectsScreen extends Screen {
                 <h1>All Projects</h1>
             </div>
             <div class="screen-actions">
-                <img src='${addProjectButton}' alt='Add Task' id='add-task-button-icon' class='add-task-button-icon screen-changer' data-screen='add-task'>
+                <img src='${addProjectButton}' alt='Add Project' id='add-project-button-icon' class='add-project-button-icon screen-changer' data-screen='add-project'>
                 <img src='${closeIcon}' alt='Close' id='close-button-icon' class='close-button-icon'>
             </div>
         </div>
