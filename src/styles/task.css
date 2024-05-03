@@ -6,6 +6,7 @@
     margin: 20px;
     border-radius: 10px;
     padding: 20px;
+    overflow-x: scroll;
 }
 
 .task-header, .project-header {
@@ -61,13 +62,13 @@
 
 .task-info {
     height: 0;
-    : hidden;
     display: grid;
     grid-template-areas: 'id subtasks subtasks checklist checklist notes notes edit-button' 'project subtasks subtasks checklist checklist notes notes reopen-button' 'project subtasks subtasks checklist checklist notes notes empty' 'project-button add-subtasks-button edit-subtasks-button add-checklist-button edit-checklist-button add-notes-button edit-notes-button open-ticket';
     text-align: center;
     grid-template-columns: 15% 1fr 1fr 1fr 1fr 1fr 1fr 10%;
     gap: 15px;
     transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
+    overflow: hidden;
 }
 
 .task-info.open, .project-info.open {
@@ -188,6 +189,8 @@
     text-align: center;
     gap: 15px;
     transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
+    overflow-x: visible;
+    overflow-y: auto;
 }
 
 .project-id {
