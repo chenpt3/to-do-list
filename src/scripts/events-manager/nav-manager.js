@@ -1,10 +1,4 @@
-// A Class to manage the navigation history of the app
-// Two buttons, previous and next, will be added to the app to navigate through the history
-// The previous button will be disabled if there is no history
-// The next button will be disabled if there is no future
-// If the user navigates to a new screen while in the middle of the history, the future will be cleared
-// The history will be stored in the NavManager class
-// To add a screen to the history, the addScreen method will be called, passing the screen id and the screen innerHTML
+
 class NavManager {
     constructor() {
         this.stack = [];
