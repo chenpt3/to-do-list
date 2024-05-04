@@ -6,7 +6,6 @@
     margin: 20px;
     border-radius: 10px;
     padding: 20px;
-    overflow-x: auto;
 }
 
 .task-header, .project-header {
@@ -189,8 +188,7 @@
     text-align: center;
     gap: 15px;
     transition: margin-top 0.5s ease-in-out, height 0.5s ease-in-out;
-    overflow-x: visible;
-    overflow-y: auto;
+    overflow: hidden;
 }
 
 .project-id {
